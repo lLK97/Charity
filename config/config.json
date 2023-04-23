@@ -1,0 +1,22 @@
+{
+  "donation": {
+    "username": "root",
+    "password": "khanhbg12aA@",
+    "database_name": "donation",
+    "host": "localhost",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "secret": "nodeauthsecret",
+  "settingToken": {
+    "expiresIn": "1w"
+  },
+  "settingCookie": {
+    "httpOnly": true,
+    "maxAge": 604800000
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379
+  }
+}
