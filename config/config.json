@@ -16,7 +16,8 @@
     "maxAge": 604800000
   },
   "redis": {
-    "host": "127.0.0.1",
-    "port": 6379
+    "host": "redis-15266.c283.us-east-1-4.ec2.cloud.redislabs.com",
+    "port": 15266,
+    "password": "fDye7z7yIlCbYH41Ld6tQ7qKgxbRdqLA"
   }
 }
