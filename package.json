@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./bin/www"
+    "sonar": "sonar-scanner",
+    "start": "node app.js"
   },
   "author": "lk97",
   "license": "ISC",
@@ -35,9 +35,5 @@
   },
   "devDependencies": {
     "sonarqube-scanner": "^3.0.1"
-  },
-  "scripts": {
-    "sonar": "sonar-scanner",
-    "start": "node app.js"
   }
 }

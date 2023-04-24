@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize");
 const fs = require("fs");
-const redis = require("ioredis");
+// const redis = require("ioredis");
+const redis = require("redis");
 
 const sequelizeConfig = JSON.parse(
   fs.readFileSync(__dirname + "/config.json", "utf8")
@@ -29,7 +30,14 @@ const sequelizeConnect = new Sequelize(
 
 const db = {};
 
-db.client = new redis({
+// db.client = new redis({
+//   password: "fDye7z7yIlCbYH41Ld6tQ7qKgxbRdqLA",
+//   socket: {
+//     host: "redis-15266.c283.us-east-1-4.ec2.cloud.redislabs.com",
+//     port: 15266,
+//   },
+// });
+db.client = redis.createClient({
   password: "fDye7z7yIlCbYH41Ld6tQ7qKgxbRdqLA",
   socket: {
     host: "redis-15266.c283.us-east-1-4.ec2.cloud.redislabs.com",
@@ -37,7 +45,7 @@ db.client = new redis({
   },
 });
 
-db.cacheTTL = 60;
+db.client = db.cacheTTL = 60;
 db.Sequelize = Sequelize;
 db.sequelizeConnect = sequelizeConnect;
 
