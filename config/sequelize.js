@@ -30,10 +30,10 @@ const sequelizeConnect = new Sequelize(
 const db = {};
 
 db.client = new redis({
-  password: process.env.DB_HOST_REDIS || sequelizeConfig["redis"].password,
+  password: sequelizeConfig["redis"].password,
   socket: {
-    host: process.env.DB_HOST_REDIS || sequelizeConfig["redis"].host,
-    port: process.env.DB_PORT_REDIS || sequelizeConfig["redis"].port,
+    host: sequelizeConfig["redis"].host,
+    port: sequelizeConfig["redis"].port,
   },
 });
 
