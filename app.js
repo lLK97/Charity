@@ -11,8 +11,7 @@ let app = express(),
   routerDonation = require("./routes/routerDonation"),
   routerArticle = require("./routes/routerArticle"),
   routerAuth = require("./routes/routerAuth"),
-  routerQuery = require("./routes/routerQuery"),
-  redis = require("ioredis");
+  routerQuery = require("./routes/routerQuery");
 
 app.use(
   cors({
@@ -34,5 +33,5 @@ app.use(routerCampaigns);
 app.use(routerDonation);
 app.use(routerArticle);
 app.use(routerQuery);
-
+app.listen(8888, () => {});
 module.exports = app;

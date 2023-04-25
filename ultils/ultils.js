@@ -38,7 +38,7 @@ exports.getCacheData = async (cacheKey) => {
 // Function to set data to cache with cacheKey and time-to-live (TTL)
 exports.setCachedData = async (cacheKey, data, ttl) => {
   return new Promise((resolve, reject) => {
-    client.setex(cacheKey, ttl, JSON.stringify(data), (err) => {
+    client.hmset(cacheKey, ttl, JSON.stringify(data), (err) => {
       if (err) {
         reject(err);
       }
