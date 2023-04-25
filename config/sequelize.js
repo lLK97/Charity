@@ -14,7 +14,6 @@ const username =
   process.env.DB_USERNAME || sequelizeConfig["donation"].username;
 const password =
   process.env.DB_PASSWORD || sequelizeConfig["donation"].password;
-const port = process.env.DB_PORT || sequelizeConfig["donation"].port;
 
 const connectObject = {
   dialect: dialect,

@@ -1,9 +1,9 @@
 {
   "donation": {
-    "username": "root",
-    "password": "khanhbg12aA@",
-    "database_name": "donation",
-    "host": "localhost",
+    "username": "uagxjwhjqppk0imn",
+    "password": "uagxjwhjqppk0imn",
+    "database_name": "bbkgmag1vkukhw5fwmn2",
+    "host": "bbkgmag1vkukhw5fwmn2-mysql.services.clever-cloud.com",
     "port": 3306,
     "dialect": "mysql"
   },
