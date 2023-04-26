@@ -85,6 +85,8 @@ exports.campaigns = async (req, res, next) => {
   } catch (err) {
     res.status(500).send({ error: err });
     console.log(err);
+  } finally {
+    client.quit();
   }
 };
 

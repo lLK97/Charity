@@ -42,6 +42,8 @@ exports.orgs = async (req, res, next) => {
   } catch (err) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(err);
+  } finally {
+    client.quit();
   }
 };
 

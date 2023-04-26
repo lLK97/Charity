@@ -51,6 +51,8 @@ exports.categories = async (req, res, next) => {
   } catch (err) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(err);
+  } finally {
+    client.quit();
   }
 };
 
@@ -79,6 +81,8 @@ exports.selectCategories = async (req, res, next) => {
     // Return an error message to the client
     res.status(500).send("Server Error");
     console.error(err);
+  } finally {
+    client.quit();
   }
 };
 
