@@ -44,7 +44,7 @@ db.client = redis.createClient({
   },
 });
 
-db.client = db.cacheTTL = 60;
+db.cacheTTL = 60;
 db.Sequelize = Sequelize;
 db.sequelizeConnect = sequelizeConnect;
 
