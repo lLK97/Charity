@@ -36,7 +36,7 @@ const db = {};
 //     port: 15266,
 //   },
 // });
-db.client = redis.createClient({
+db.client = new redis({
   password: "fDye7z7yIlCbYH41Ld6tQ7qKgxbRdqLA",
   socket: {
     host: "redis-15266.c283.us-east-1-4.ec2.cloud.redislabs.com",
