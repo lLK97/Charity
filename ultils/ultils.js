@@ -38,7 +38,7 @@ exports.createRedisClient = async () => {
 
 exports.getCacheData = async (cacheKey) => {
   try {
-    const client = await createRedisClient();
+    // const client = await createRedisClient();
     return new Promise((resolve, reject) => {
       client.get(cacheKey, (err, data) => {
         if (err) {
@@ -46,7 +46,7 @@ exports.getCacheData = async (cacheKey) => {
         }
         resolve(data);
       });
-      client.quit();
+      // client.quit();
     });
   } catch (err) {
     console.error(err);
@@ -54,7 +54,7 @@ exports.getCacheData = async (cacheKey) => {
 };
 // Function to set data to cache with cacheKey and time-to-live (TTL)
 exports.setCachedData = async (cacheKey, data, ttl) => {
-  const client = await createRedisClient();
+  // const client = await createRedisClient();
   return new Promise((resolve, reject) => {
     client.hmset(cacheKey, ttl, JSON.stringify(data), (err) => {
       if (err) {
@@ -62,6 +62,6 @@ exports.setCachedData = async (cacheKey, data, ttl) => {
       }
       resolve();
     });
-    client.quit();
+    // client.quit();
   });
 };
