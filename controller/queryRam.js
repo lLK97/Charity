@@ -33,8 +33,6 @@ exports.CardCampaign = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -55,8 +53,6 @@ exports.CardOrgs = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -82,8 +78,6 @@ exports.CardBanner = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -103,8 +97,6 @@ exports.CardCategories = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -125,8 +117,6 @@ exports.CardArticles = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -150,8 +140,6 @@ exports.CampaignDetail = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -176,8 +164,6 @@ exports.ArticlesDetail = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -201,8 +187,6 @@ exports.OrgsDetail = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -237,8 +221,6 @@ exports.CampaignRelated = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -259,8 +241,6 @@ exports.AccountDetail = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -284,8 +264,6 @@ exports.CampaignsOfOrg = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -308,8 +286,6 @@ exports.DonationsOfUser = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -334,8 +310,6 @@ exports.updateInforOrgs = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };
 
@@ -359,7 +333,5 @@ exports.articleCategories = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Unable to connect to cache server" });
     console.log(error);
-  } finally {
-    client.quit();
   }
 };

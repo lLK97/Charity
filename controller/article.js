@@ -75,8 +75,6 @@ exports.articles = async (req, res, next) => {
   } catch (err) {
     res.status(500).send({ error: "Unable to connect to cache server" });
     console.log(err);
-  } finally {
-    client.quit();
   }
 };
 // Insert a new article into the database
