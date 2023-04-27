@@ -79,7 +79,7 @@ exports.ArticleDetail = `select articles.id, articles.title,
                           from articles
                           where id = `;
 exports.OrgDetail = (id) => {
-  return `SELECT id, title, imageData, desShort, detail FROM donation.orgs where id = ${id}`;
+  return `SELECT id, title, imageData, desShort, detail FROM orgs where id = ${id}`;
 };
 
 exports.AccountDetail = (username) => {
