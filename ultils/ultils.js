@@ -24,8 +24,9 @@ exports.checkError = (validationRules, req, body) => {
   }, {});
 };
 
-exports.createRedisClient = async () => {
+const createRedisClient = async () => {
   return new Promise((resolve, reject) => {
+    client.setMaxListeners(20);
     client.on("ready", () => {
       resolve(client);
     });
@@ -35,33 +36,21 @@ exports.createRedisClient = async () => {
     });
   });
 };
-
 exports.getCacheData = async (cacheKey) => {
   try {
-    // const client = await createRedisClient();
-    return new Promise((resolve, reject) => {
-      client.get(cacheKey, (err, data) => {
-        if (err) {
-          reject(err);
-        }
-        resolve(data);
-      });
-      // client.quit();
-    });
-  } catch (err) {
-    console.error(err);
+    const cachedData = await client.get(cacheKey);
+    return cachedData;
+  } catch (error) {
+    console.log(error);
   }
 };
-// Function to set data to cache with cacheKey and time-to-live (TTL)
+
 exports.setCachedData = async (cacheKey, data, ttl) => {
-  // const client = await createRedisClient();
-  return new Promise((resolve, reject) => {
-    client.hmset(cacheKey, ttl, JSON.stringify(data), (err) => {
-      if (err) {
-        reject(err);
-      }
-      resolve();
+  try {
+    await client.set(cacheKey, JSON.stringify(data), "EX", ttl, (err) => {
+      console.log(err);
     });
-    // client.quit();
-  });
+  } catch (error) {
+    console.log(error);
+  }
 };
